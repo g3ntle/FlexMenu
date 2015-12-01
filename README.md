@@ -73,6 +73,8 @@ DataContext = this;
 
 ![FlexMenu](Media/FlexMenu.png)
 
+*FlexMenu (not relaated to code examples)*
+
 ### FlexHeader
 
 The *FlexHeader* is a simple horizontal header split in two sections: *Title* and *Subtitle*. The width of these sections can be set individually, as well as the background color. The *Title* section also features an *Icon* which is based off an *ImageSource*.
@@ -84,4 +86,6 @@ The *FlexHeader* is a simple horizontal header split in two sections: *Title* an
                TitleBackground="DarkGreen" SubtitleBackground="Green" />
 ```
 
-![FlexMenu](Media/FlexHeader.png)
+![FlexHeader](Media/FlexHeader.png)
+
+*FlexHeader (not relaated to code examples)*
