@@ -33,12 +33,42 @@ A *FlexMenuItem* is a simpel Model with two Properties.
 * **Text:** String *(Text to render)*
 * **Icon:** ImageSource (*Icon to render*)
 
+**Method 1:** Content
+
+**XAML**
+
 ```xaml
 <fm:FlexMenu>
     <fm:FlexMenuItem Text="One" Icon="{StaticResource MyImage1}"/>
     <fm:FlexMenuItem Text="Two" Icon="{StaticResource MyImage2}"/>
     <fm:FlexMenuItem Text="Three" Icon="{StaticResource MyImage3}"/>
 </fm:FlexMenu>
+```
+
+**Method 2:** Binding
+
+**XAML**
+
+```xaml
+<fm:FlexMenu ItemsSource="{Binding Items}"/>
+```
+
+**C#**
+
+```cs
+public ObservableCollection<FlexMenuItem> Items { get; set; }
+```
+
+```cs
+var items = new FlexMenuItem[]
+{
+    new FlexMenuItem() { Text = "One", Icon = ... },
+    new FlexMenuItem() { Text = "Two", Icon = ... },
+    new FlexMenuItem() { Text = "Three", Icon = ... }
+};
+
+Items = new ObservableCollection<FlexMenuItem>(items);
+DataContext = this;
 ```
 
 ![FlexMenu](Media/FlexMenu.png)
