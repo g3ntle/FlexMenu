@@ -9,7 +9,7 @@
 
 ## Features
 
-* Flexible **Menu** & **Header**
+* Flexible *Menu* & *Header*
 * Binding support
 * Fully animated
 
