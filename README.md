@@ -33,7 +33,7 @@ A *FlexMenuItem* is a simpel Model with two Properties.
 * **Text:** String *(Text to render)*
 * **Icon:** ImageSource (*Icon to render*)
 
-**Method 1:** Content
+#### Method 1
 
 **XAML**
 
@@ -45,7 +45,7 @@ A *FlexMenuItem* is a simpel Model with two Properties.
 </fm:FlexMenu>
 ```
 
-**Method 2:** Binding
+#### Method 2 (Binding)
 
 **XAML**
 
