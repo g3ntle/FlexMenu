@@ -23,20 +23,20 @@ namespace FlexMenu.Runnable.View
         public MainWindow()
         {
             InitializeComponent();
-            Fill();
+            // Fill();
         }
 
-        protected void Fill()
-        {
-            var menuItems = new FlexMenuItem[]
-            {
-                new FlexMenuItem() { Text = "#1 Hello, World!" },
-                new FlexMenuItem() { Text = "#2 Hello, Home!" },
-                new FlexMenuItem() { Text = "#3 Hello, Shop!" }
-            };
+        //protected void Fill()
+        //{
+        //    var menuItems = new FlexMenuItem[]
+        //    {
+        //        new FlexMenuItem() { Text = "#1 Hello, World!" },
+        //        new FlexMenuItem() { Text = "#2 Hello, Home!" },
+        //        new FlexMenuItem() { Text = "#3 Hello, Shop!" }
+        //    };
 
-            MenuItems = new ObservableCollection<FlexMenuItem>(menuItems);
-            DataContext = this;
-        }
+        //    MenuItems = new ObservableCollection<FlexMenuItem>(menuItems);
+        //    DataContext = this;
+        //}
     }
 }
