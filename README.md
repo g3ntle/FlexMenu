@@ -73,7 +73,7 @@ DataContext = this;
 
 ![FlexMenu](Media/FlexMenu.png)
 
-*FlexMenu (not relaated to code examples)*
+*FlexMenu (not related to code examples)*
 
 ### FlexHeader
 
@@ -88,4 +88,4 @@ The *FlexHeader* is a simple horizontal header split in two sections: *Title* an
 
 ![FlexHeader](Media/FlexHeader.png)
 
-*FlexHeader (not relaated to code examples)*
+*FlexHeader (not related to code examples)*
