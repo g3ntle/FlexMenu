@@ -6,10 +6,11 @@
 * [Usage](#usage)
     * [FlexMenu](#flexmenu)
     * [FlexHeader](#flexheader)
+    * [FlexBreadcrumbs](#flexbreadcrumbs)
 
 ## Features
 
-* Flexible *Menu* & *Header*
+* Flexible *Menu*, *Header* & *Breadcrumbs*
 * Binding support
 * Fully animated
 
@@ -28,10 +29,10 @@ Add a reference to the `FlexMenu` assembly and add the *XML namespace* below to 
 
 The *FlexMenu* is a simple vertical menu which supports one or more *FlexMenuItem*s as its content. 
 
-A *FlexMenuItem* is a simpel Model with two Properties.
+A *FlexMenuItem* is a simple model which contains the following properties:
 
 * **Text:** String *(Text to render)*
-* **Icon:** ImageSource (*Icon to render*)
+* **Icon:** ImageSource *(Icon to render)*
 
 #### Method 1
 
@@ -39,9 +40,9 @@ A *FlexMenuItem* is a simpel Model with two Properties.
 
 ```xaml
 <fm:FlexMenu>
-    <fm:FlexMenuItem Text="One" Icon="{StaticResource MyImage1}"/>
-    <fm:FlexMenuItem Text="Two" Icon="{StaticResource MyImage2}"/>
-    <fm:FlexMenuItem Text="Three" Icon="{StaticResource MyImage3}"/>
+    <fm:FlexMenuItem Text="Grades" Icon="{StaticResource GradesImage}"/>
+    <fm:FlexMenuItem Text="Sports" Icon="{StaticResource SportsImage}"/>
+    <fm:FlexMenuItem Text="Books" Icon="{StaticResource BooksImage}"/>
 </fm:FlexMenu>
 ```
 
@@ -62,9 +63,9 @@ public ObservableCollection<FlexMenuItem> Items { get; set; }
 ```cs
 var items = new FlexMenuItem[]
 {
-    new FlexMenuItem() { Text = "One", Icon = ... },
-    new FlexMenuItem() { Text = "Two", Icon = ... },
-    new FlexMenuItem() { Text = "Three", Icon = ... }
+    new FlexMenuItem() { Text = "Grades", Icon = ... },
+    new FlexMenuItem() { Text = "Sports", Icon = ... },
+    new FlexMenuItem() { Text = "Books", Icon = ... }
 };
 
 Items = new ObservableCollection<FlexMenuItem>(items);
@@ -73,19 +74,37 @@ DataContext = this;
 
 ![FlexMenu](Media/FlexMenu.png)
 
-*FlexMenu (not related to code examples)*
-
 ### FlexHeader
 
 The *FlexHeader* is a simple horizontal header split in two sections: *Title* and *Subtitle*. The width of these sections can be set individually, as well as the background color. The *Title* section also features an *Icon* which is based off an *ImageSource*.
 
 ```xaml
-<fm:FlexHeader Icon="{StaticResource MyImage}"
-               Title="Hello" Subtitle="World"
-               TitleWidth="1*" SubtitleWidth="2*"
-               TitleBackground="DarkGreen" SubtitleBackground="Green" />
+<fm:FlexHeader Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               Icon="{StaticResource StudentImage}"
+               Title="John Doe" Subtitle="Grades"
+               TitleWidth="135pt" SubtitleWidth="*"/>
 ```
 
 ![FlexHeader](Media/FlexHeader.png)
 
-*FlexHeader (not related to code examples)*
+### FlexBreadcrumbs
+
+The *FlexBreadcrumbs* control is a simple horizontal list of breadcrumbs which can be embedded inside a *FlexHeader*.
+
+A *FlexBreadcrumb* is a simple model which contains the following properties:
+
+* **Text:** String *(Text to render)*
+* **Boolean:** Active *(Style indicator)*
+
+```xaml
+<fm:FlexHeader ...>
+    <fm:FlexHeader.Content>
+        <fm:FlexBreadcrumbs>
+            <fm:FlexBreadcrumb Text="Account"/>
+            <fm:FlexBreadcrumb Text="Grades" Active="True"/>
+        </fm:FlexBreadcrumbs>
+    </fm:FlexHeader.Content>
+</fm:FlexHeader>
+```
+
+![FlexBreadcrumbs](Media/FlexBreadcrumbs.png)

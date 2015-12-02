@@ -10,7 +10,8 @@ namespace FlexMenu.Controls
     {
         static FlexMenu()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexMenu), new FrameworkPropertyMetadata(typeof(FlexMenu)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexMenu)
+                , new FrameworkPropertyMetadata(typeof(FlexMenu)));
         }
     }
 }

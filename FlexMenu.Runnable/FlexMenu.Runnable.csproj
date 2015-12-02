@@ -105,8 +105,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\File.png" />
-    <Resource Include="Resources\Folder.png" />
+    <Resource Include="Resources\Sports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Books.png" />
+    <Resource Include="Resources\Grades.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

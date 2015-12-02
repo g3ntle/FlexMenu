@@ -6,32 +6,41 @@
         xmlns:local="clr-namespace:FlexMenu.Runnable.View"
         xmlns:fm="clr-namespace:FlexMenu.Controls;assembly=FlexMenu"
         mc:Ignorable="d"
-        Title="FlexMenu" Height="350" Width="500">
+        Title="iStudent" Height="350" Width="500">
     <Window.Resources>
         <ResourceDictionary>
-            <BitmapImage x:Key="FolderImage" UriSource="pack://application:,,,/Resources/Folder.png"/>
-            <BitmapImage x:Key="FileImage" UriSource="pack://application:,,,/Resources/File.png"/>
+            <BitmapImage x:Key="StudentImage" UriSource="pack://application:,,,/Resources/Student.png"/>
+            <BitmapImage x:Key="GradesImage" UriSource="pack://application:,,,/Resources/Grades.png"/>
+            <BitmapImage x:Key="SportsImage" UriSource="pack://application:,,,/Resources/Sports.png"/>
+            <BitmapImage x:Key="BooksImage" UriSource="pack://application:,,,/Resources/Books.png"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid Background="#ECECEC">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40px"/>
+            <RowDefinition Height="30pt"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="135pt"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <fm:FlexHeader Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                       Icon="{StaticResource FolderImage}"
-                       Title="Hello" Subtitle="World"
-                       TitleWidth="1*" SubtitleWidth="2*"/>
+                       Icon="{StaticResource StudentImage}"
+                       Title="John Doe" Subtitle="Grades"
+                       TitleWidth="135pt" SubtitleWidth="*">
+            <fm:FlexHeader.Content>
+                <fm:FlexBreadcrumbs>
+                    <fm:FlexBreadcrumb Text="Account"/>
+                    <fm:FlexBreadcrumb Text="Grades" Active="True"/>
+                </fm:FlexBreadcrumbs>
+            </fm:FlexHeader.Content>
+        </fm:FlexHeader>
 
         <fm:FlexMenu Grid.Column="0" Grid.Row="1">
-            <fm:FlexMenuItem Text="Hello, world!" Icon="{StaticResource FileImage}"/>
-            <fm:FlexMenuItem Text="Hello, world!" Icon="{StaticResource FileImage}"/>
-            <fm:FlexMenuItem Text="Hello, world!" Icon="{StaticResource FileImage}"/>
+            <fm:FlexMenuItem Text="Grades" Icon="{StaticResource GradesImage}"/>
+            <fm:FlexMenuItem Text="Sports" Icon="{StaticResource SportsImage}"/>
+            <fm:FlexMenuItem Text="Books" Icon="{StaticResource BooksImage}"/>
         </fm:FlexMenu>
     </Grid>
 </Window>

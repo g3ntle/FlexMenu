@@ -11,7 +11,7 @@ using FlexMenu.Utility;
 
 namespace FlexMenu.Controls
 {
-    public class FlexHeader : Control
+    public class FlexHeader : ContentControl
     {
         static FlexHeader()
         {

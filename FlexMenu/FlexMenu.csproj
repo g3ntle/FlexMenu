@@ -50,9 +50,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FlexBreadcrumb.cs" />
+    <Compile Include="Controls\FlexBreadcrumbs.cs" />
     <Compile Include="Controls\FlexHeader.cs" />
     <Compile Include="Controls\FlexMenu.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
+    <Compile Include="Data\BooleanInverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
