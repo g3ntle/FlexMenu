@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("FlexMenu")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Rob Hendriks")]
 [assembly: AssemblyProduct("FlexMenu")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Rob Hendriks 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
