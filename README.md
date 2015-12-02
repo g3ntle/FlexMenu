@@ -142,4 +142,4 @@ Items = new ObservableCollection<FlexBreadcrumb>(items);
 DataContext = this;
 ```
 
-Click (here)[FlexMenu.Runnable/View/MainWindow.xaml] for an example implementation.
+Click [here](FlexMenu.Runnable/View/MainWindow.xaml) for an example implementation.
