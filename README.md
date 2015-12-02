@@ -1,5 +1,7 @@
 # FlexMenu
 
+![Screenshot](Media/Screenshot.png)
+
 ## Overview
 
 * [Features](#features)
@@ -26,6 +28,8 @@ Add a reference to the `FlexMenu` assembly and add the *XML namespace* below to 
 ```
 
 ### FlexMenu
+
+![FlexMenu](Media/FlexMenu.png)
 
 The *FlexMenu* is a simple vertical menu which supports one or more *FlexMenuItem*s as its content. 
 
@@ -72,9 +76,9 @@ Items = new ObservableCollection<FlexMenuItem>(items);
 DataContext = this;
 ```
 
-![FlexMenu](Media/FlexMenu.png)
-
 ### FlexHeader
+
+![FlexHeader](Media/FlexHeader.png)
 
 The *FlexHeader* is a simple horizontal header split in two sections: *Title* and *Subtitle*. The width of these sections can be set individually, as well as the background color. The *Title* section also features an *Icon* which is based off an *ImageSource*.
 
@@ -85,9 +89,9 @@ The *FlexHeader* is a simple horizontal header split in two sections: *Title* an
                TitleWidth="135pt" SubtitleWidth="*"/>
 ```
 
-![FlexHeader](Media/FlexHeader.png)
-
 ### FlexBreadcrumbs
+
+![FlexBreadcrumbs](Media/FlexBreadcrumbs.png)
 
 The *FlexBreadcrumbs* control is a simple horizontal list of breadcrumbs which can be embedded inside a *FlexHeader*.
 
@@ -137,5 +141,3 @@ var items = new FlexBreadcrumb[]
 Items = new ObservableCollection<FlexBreadcrumb>(items);
 DataContext = this;
 ```
-
-![FlexBreadcrumbs](Media/FlexBreadcrumbs.png)
