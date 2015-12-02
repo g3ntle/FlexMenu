@@ -96,6 +96,8 @@ A *FlexBreadcrumb* is a simple model which contains the following properties:
 * **Text:** String *(Text to render)*
 * **Boolean:** Active *(Style indicator)*
 
+#### Method 1
+
 ```xaml
 <fm:FlexHeader ...>
     <fm:FlexHeader.Content>
@@ -105,6 +107,35 @@ A *FlexBreadcrumb* is a simple model which contains the following properties:
         </fm:FlexBreadcrumbs>
     </fm:FlexHeader.Content>
 </fm:FlexHeader>
+```
+
+#### Method 2 (Binding)
+
+**XAML**
+
+```xaml
+<fm:FlexHeader ...>
+    <fm:FlexHeader.Content>
+        <fm:FlexBreadcrumbs ItemsSource="{Binding Items}"/>
+    </fm:FlexHeader.Content>
+</fm:FlexHeader>
+```
+
+**C#**
+
+```cs
+public ObservableCollection<FlexBreadcrumb> Items { get; set; }
+```
+
+```cs
+var items = new FlexBreadcrumb[]
+{
+    new FlexBreadcrumb() { Text = "Account" },
+    new FlexBreadcrumb() { Text = "Grades", Active = true }
+};
+
+Items = new ObservableCollection<FlexBreadcrumb>(items);
+DataContext = this;
 ```
 
 ![FlexBreadcrumbs](Media/FlexBreadcrumbs.png)
