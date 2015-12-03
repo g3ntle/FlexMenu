@@ -43,7 +43,5 @@
             <fm:FlexMenuItem Content="Sports" Icon="{StaticResource SportsImage}" Command="{Binding Sports}"/>
             <fm:FlexMenuItem Content="Books" Icon="{StaticResource BooksImage}" Command="{Binding Books}"/>
         </fm:FlexMenu>
-        
-        <Button Grid.Column="1" Grid.Row="1" Content="Hello, World!" Command="{Binding Grades}"/>
     </Grid>
 </Window>
