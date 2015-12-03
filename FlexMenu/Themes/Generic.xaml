@@ -5,93 +5,109 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions">
 
-    <!-- Colors -->
-    <Color x:Key="DarkGreen">#27AE60</Color>
-    <Color x:Key="LightGreen">#2BBC68</Color>
-    <Color x:Key="Green">#71DA9D</Color>
+    <!--#region Colors-->
     
-    <Color x:Key="FlexMenuBackground">#FEFEFE</Color>
-    <Color x:Key="FlexMenuItemBackground">#FEFEFE</Color>
-    <Color x:Key="FlexMenuItemBackgroundHover">#F4F4F4</Color>
-    <Color x:Key="FlexMenuItemBackgroundPressed">#ECECEC</Color> 
-
-    <Color x:Key="FlexMenuItemForeground">#666666</Color>
-    <Color x:Key="FlexMenuItemForegroundHover">#27AE60</Color>
-    <!-- /Colors -->
+    <Color x:Key="ColorGrey1">#FEFEFE</Color>
+    <Color x:Key="ColorGrey2">#F4F4F4</Color>
+    <Color x:Key="ColorGrey3">#ECECEC</Color>
+    <Color x:Key="ColorGrey4">#666666</Color>
+    <Color x:Key="ColorGreen1">#27AE60</Color>
+    <Color x:Key="ColorGreen2">#2BBC68</Color>
     
-    <!-- Brushes -->
-    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource Green}"/>
-    <SolidColorBrush x:Key="FlexMenuBackgroundBrush" Color="{StaticResource FlexMenuBackground}"/>
-    <SolidColorBrush x:Key="FlexMenuItemBackgroundBrush" Color="{StaticResource FlexMenuItemBackground}"/>
-    <SolidColorBrush x:Key="FlexMenuItemForegroundBrush" Color="{StaticResource FlexMenuItemForeground}"/>
-    <!-- /Brushes -->
+    <!--#endregion-->
+    
+    <!--#region Brushes-->
+    
+    <SolidColorBrush x:Key="BrushGrey1" Color="{StaticResource ColorGrey1}"/>
+    <SolidColorBrush x:Key="BrushGrey2" Color="{StaticResource ColorGrey2}"/>
+    <SolidColorBrush x:Key="BrushGrey3" Color="{StaticResource ColorGrey3}"/>
+    <SolidColorBrush x:Key="BrushGrey4" Color="{StaticResource ColorGrey4}"/>
+    <SolidColorBrush x:Key="BrushGreen1" Color="{StaticResource ColorGreen1}"/>
+    <SolidColorBrush x:Key="BrushGreen2" Color="{StaticResource ColorGreen2}"/>
 
-    <!-- FlexLabel -->
+    <!--#endregion-->
+
+    <!--#region FlexLabel Style-->
+    
     <Style x:Key="FlexLabel" TargetType="{x:Type Label}">
         <Setter Property="FontFamily" Value="Segoe UI Light"/>
     </Style>
-    <!-- /FlexLabel -->
+    
+    <!--#endregion-->
 
-    <!-- FlexMenu -->
-    <Style x:Key="FlexMenu" TargetType="{x:Type Grid}">
-        <Setter Property="Background" Value="{StaticResource FlexMenuBackgroundBrush}"/>
+    <!--#region FlexMenuStyle-->
+    
+    <Style x:Key="FlexMenuStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{StaticResource BrushGrey1}"/>
     </Style>
-    <!-- /FlexMenu -->
+    
+    <!--#endregion-->
 
-    <!-- FlexMenuItem -->
-    <Style x:Key="FlexMenuItem" TargetType="{x:Type Grid}">
-        <Setter Property="Background" Value="{StaticResource FlexMenuItemBackgroundBrush}"/>
+    <!--#region FlexMenuItemStyle-->
+
+    <Style x:Key="FlexMenuItemStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{StaticResource BrushGrey1}"/>
     </Style>
-    <!-- /FlexMenuItem -->
+    
+    <!--#endregion-->
 
-    <!-- FlexMenuItemIcon -->
-    <Style x:Key="FlexMenuItemIcon" TargetType="{x:Type Image}">
+    <!--#region FlexMenuItemImageStyle-->
+
+    <Style x:Key="FlexMenuItemIconStyle" TargetType="{x:Type Image}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0 5 10 5"/>
         <Setter Property="Width" Value="25px"/>
         <Setter Property="Height" Value="25px"/>
     </Style>
-    <!-- /FlexMenuItemIcon -->
 
-    <!-- FlexMenuItemLabel -->
-    <Style x:Key="FlexMenuItemLabel" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
+    <!--#endregion-->
+    
+    <!--#region FlexMenuItemLabelStyle-->
+
+    <Style x:Key="FlexMenuItemLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="10 5 0 5"/>
-        
         <Setter Property="FontSize" Value="11pt"/>
-        <Setter Property="Foreground" Value="{StaticResource FlexMenuItemForegroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource BrushGrey4}"/>
     </Style>
-    <!-- /FlexMenuItemLabel -->
 
-    <!-- FlexHeaderImage -->
-    <Style x:Key="FlexHeaderImage" TargetType="{x:Type Image}">
+    <!--#endregion-->
+
+    <!--#region FlexHeaderImageStyle-->
+    
+    <Style x:Key="FlexHeaderImageStyle" TargetType="{x:Type Image}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Width" Value="25px"/>
         <Setter Property="Height" Value="25px"/>
         <Setter Property="Margin" Value="0 0 10 0"/>
     </Style>
-    <!-- /FlexHeaderImage -->
+    
+    <!--#endregion-->
 
-    <!-- FlexHeaderLabel -->
-    <Style x:Key="FlexHeaderLabel" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
+    <!--#region FlexHeaderLabelStyle-->
+    <Style x:Key="FlexHeaderLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="10 0 0 0"/>
         
         <Setter Property="FontSize" Value="13pt"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
-    <!-- /FlexHeaderLabel -->
 
-    <!-- FlexBreadcrumbs -->
-    <Style x:Key="FlexBreadcrumbs" TargetType="{x:Type Grid}">
+    <!--#endregion-->
+
+    <!--#region FlexBreadcrumbsStyle-->
+
+    <Style x:Key="FlexBreadcrumbsStyle" TargetType="{x:Type Grid}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-    <!-- /FlexBreadcrumbs -->
+    
+    <!--#endregion-->
 
-    <!-- FlexBreadcrumb -->
-    <Style x:Key="FlexBreadcrumb" TargetType="{x:Type Border}">
+    <!--#region FlexBreadcrumbStyle-->
+
+    <Style x:Key="FlexBreadcrumbStyle" TargetType="{x:Type Border}">
         <Setter Property="Margin" Value="0 0 5 0"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="CornerRadius" Value="5"/>
@@ -107,34 +123,26 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- /FlexBreadcrumb -->
+    
+    <!--#endregion-->
 
-    <!-- FlexBreadcrumbHover -->
-    <Style x:Key="FlexBreadcrumbHover" TargetType="{x:Type Border}" BasedOn="{StaticResource FlexBreadcrumb}">
-        <Setter Property="Background" Value="{x:Null}"/>
-    </Style>
-    <!-- /FlexBreadcrumbHover -->
+    <!--#region FlexBreadcrumbLabelStyle-->
 
-    <!-- FlexBreadcrumb -->
-    <Style x:Key="FlexBreadcrumbLabel" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
+    <Style x:Key="FlexBreadcrumbLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
         <Setter Property="Padding" Value="3 1 3 1"/>
         <Setter Property="FontSize" Value="9pt"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
-    <!-- /FlexBreadcrumb -->
+    
+    <!--#endregion-->
 
-    <!-- FlexBreadcrumb -->
-    <Style x:Key="FlexBreadcrumbSeparator" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexBreadcrumb}">
-        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
-    </Style>
-    <!-- /FlexBreadcrumb -->
-
-    <!-- FlexMenu -->
+    <!--#region FlexMenu-->
+    
     <Style TargetType="{x:Type local:FlexMenu}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FlexMenu}">
-                    <Grid Style="{StaticResource FlexMenu}">
+                    <Grid Style="{StaticResource FlexMenuStyle}">
                         <ItemsPresenter/>
                     </Grid>
                 </ControlTemplate>
@@ -148,19 +156,21 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- /FlexMenu -->
+    
+    <!--#endregion-->
 
-    <!-- FlexMenuItem -->
+    <!--#region FlexMenuItem-->
+    
     <Style TargetType="{x:Type local:FlexMenuItem}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FlexMenuItem}">
-                    <Grid x:Name="gridContainer" Style="{StaticResource FlexMenuItem}">
+                    <Grid x:Name="gridContainer" Style="{StaticResource FlexMenuItemStyle}">
                         <Image x:Name="imgIcon" 
-                               Style="{StaticResource FlexMenuItemIcon}"
+                               Style="{StaticResource FlexMenuItemIconStyle}"
                                Source="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}}"/>
                         <Label x:Name="lblContent" 
-                               Style="{StaticResource FlexMenuItemLabel}"
+                               Style="{StaticResource FlexMenuItemLabelStyle}"
                                Content="{Binding Content, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}}"/>
 
                         <VisualStateManager.VisualStateGroups>
@@ -171,20 +181,20 @@
                                 <VisualState x:Name="Normal"/>
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ColorAnimation To="{StaticResource FlexMenuItemBackgroundHover}"
+                                        <ColorAnimation To="{StaticResource ColorGrey2}"
                                                         Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"
                                                         Storyboard.TargetName="gridContainer"/>
-                                        <ColorAnimation To="{StaticResource DarkGreen}"
+                                        <ColorAnimation To="{StaticResource ColorGreen1}"
                                                         Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)"
                                                         Storyboard.TargetName="lblContent"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ColorAnimation To="{StaticResource FlexMenuItemBackgroundPressed}"
+                                        <ColorAnimation To="{StaticResource ColorGrey3}"
                                                         Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"
                                                         Storyboard.TargetName="gridContainer"/>
-                                        <ColorAnimation To="{StaticResource DarkGreen}"
+                                        <ColorAnimation To="{StaticResource ColorGreen1}"
                                                         Storyboard.TargetProperty="(Label.Foreground).(SolidColorBrush.Color)"
                                                         Storyboard.TargetName="lblContent"/>
                                     </Storyboard>
@@ -196,9 +206,11 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- /FlexMenuItem -->
+    
+    <!--#endregion-->
 
-    <!-- /FlexHeader -->
+    <!--#region FlexHeader-->
+    
     <Style TargetType="{x:Type local:FlexHeader}">
         <Setter Property="Template">
             <Setter.Value>
@@ -210,28 +222,29 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Grid.Column="0" Background="{TemplateBinding TitleBackground}">
-                            <Label x:Name="TitleLabel" Content="{TemplateBinding Title}" Style="{StaticResource FlexHeaderLabel}"/>
-                            <Image x:Name="TitleImage" Source="{TemplateBinding Icon}" Style="{StaticResource FlexHeaderImage}"/>
+                            <Label x:Name="TitleLabel" Content="{TemplateBinding Title}" Style="{StaticResource FlexHeaderLabelStyle}"/>
+                            <Image x:Name="TitleImage" Source="{TemplateBinding Icon}" Style="{StaticResource FlexHeaderImageStyle}"/>
                         </Grid>
 
                         <Grid Grid.Column="1" Background="{TemplateBinding SubtitleBackground}">
-                            <Label x:Name="SubTitleLabel" Content="{TemplateBinding Subtitle}" Style="{StaticResource FlexHeaderLabel}"/>
+                            <Label x:Name="SubTitleLabel" Content="{TemplateBinding Subtitle}" Style="{StaticResource FlexHeaderLabelStyle}"/>
                             <ContentPresenter/>
                         </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        
     </Style>
-    <!-- /FlexHeader -->
+    
+    <!--#endregion-->
 
-    <!-- /FlexBreadcrumbs -->
+    <!--#region FlexBreadcrumbs-->
+    
     <Style TargetType="{x:Type local:FlexBreadcrumbs}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FlexBreadcrumbs}">
-                    <Grid Style="{StaticResource FlexBreadcrumbs}">
+                    <Grid Style="{StaticResource FlexBreadcrumbsStyle}">
                         <ItemsPresenter/>
                     </Grid>
                 </ControlTemplate>
@@ -245,16 +258,19 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- /FlexBreadcrumbs -->
+    
+    <!--#endregion -->
 
+    <!--#region FlexBreadcrumb-->
+    
     <Style TargetType="{x:Type local:FlexBreadcrumb}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FlexBreadcrumb}">
                     <StackPanel Orientation="Horizontal">
-                        <Border x:Name="bContainer" Style="{StaticResource FlexBreadcrumb}">
-                            <Label x:Name="lblContent" 
-                               Style="{StaticResource FlexBreadcrumbLabel}"
+                        <Border x:Name="Outer" Style="{StaticResource FlexBreadcrumbStyle}">
+                            <Label x:Name="Inner" 
+                               Style="{StaticResource FlexBreadcrumbLabelStyle}"
                                Content="{Binding Content, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}}"/>
                         </Border>
 
@@ -268,7 +284,7 @@
                                     <Storyboard>
                                         <ColorAnimation To="Transparent"
                                                         Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                        Storyboard.TargetName="bContainer"/>
+                                                        Storyboard.TargetName="Outer"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -279,4 +295,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--#endregion-->
+    
 </ResourceDictionary>
