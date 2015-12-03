@@ -8,10 +8,14 @@ namespace FlexMenu.Controls
 {
     public class FlexMenu : ItemsControl
     {
+        #region Constructors
+
         static FlexMenu()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexMenu)
                 , new FrameworkPropertyMetadata(typeof(FlexMenu)));
         }
+
+        #endregion
     }
 }

@@ -1,54 +1,35 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace FlexMenu.Controls
 {
-    public class FlexMenuItem : INotifyPropertyChanged
+    public class FlexMenuItem : Button
     {
-        private string _text;
+        #region Constructors
 
-        [Bindable(true), Category("Common")]
-        public string Text
+        static FlexMenuItem()
         {
-            get { return _text; }
-            set { _text = value; OnPropertyChanged("Text"); }
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexMenuItem)
+                , new FrameworkPropertyMetadata(typeof(FlexMenuItem)));
         }
 
-        private ImageSource _icon;
+        #endregion
 
-        [Bindable(true), Category("Appearance")]
+        #region Icon
+
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register("Icon",
+            typeof(ImageSource), typeof(FlexMenuItem), new PropertyMetadata());
+
         public ImageSource Icon
         {
-            get { return _icon; }
-            set { _icon = value; OnPropertyChanged("Icon"); }
+            get { return (ImageSource)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
 
-        private bool _active = false;
-
-        [Bindable(true), Category("Data")]
-        public bool Active
-        {
-            get { return _active; }
-            set { _active = value; OnPropertyChanged("Active"); }
-        }
-
-        private ICommand _command;
-
-        [Bindable(true), Category("Data")]
-        public ICommand Command
-        {
-            get { return _command; }
-            set { _command = value; OnPropertyChanged("Command"); }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        #endregion
     }
 }

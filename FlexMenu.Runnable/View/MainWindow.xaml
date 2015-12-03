@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FlexMenu.Runnable.View"
         xmlns:fm="clr-namespace:FlexMenu.Controls;assembly=FlexMenu"
         mc:Ignorable="d"
-        Title="iStudent" Height="350" Width="500">
+        Title="iStudent" Height="350" Width="500"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="StudentImage" UriSource="pack://application:,,,/Resources/Student.png"/>
@@ -31,16 +32,18 @@
                        TitleWidth="135pt" SubtitleWidth="*">
             <fm:FlexHeader.Content>
                 <fm:FlexBreadcrumbs>
-                    <fm:FlexBreadcrumb Text="Account"/>
-                    <fm:FlexBreadcrumb Text="Grades" Active="True"/>
+                    <fm:FlexBreadcrumb Content="Account"/>
+                    <fm:FlexBreadcrumb Content="Grades"/>
                 </fm:FlexBreadcrumbs>
             </fm:FlexHeader.Content>
         </fm:FlexHeader>
 
         <fm:FlexMenu Grid.Column="0" Grid.Row="1">
-            <fm:FlexMenuItem Text="Grades" Icon="{StaticResource GradesImage}"/>
-            <fm:FlexMenuItem Text="Sports" Icon="{StaticResource SportsImage}"/>
-            <fm:FlexMenuItem Text="Books" Icon="{StaticResource BooksImage}"/>
+            <fm:FlexMenuItem Content="Grades" Icon="{StaticResource GradesImage}" Command="{Binding Grades}"/>
+            <fm:FlexMenuItem Content="Sports" Icon="{StaticResource SportsImage}" Command="{Binding Sports}"/>
+            <fm:FlexMenuItem Content="Books" Icon="{StaticResource BooksImage}" Command="{Binding Books}"/>
         </fm:FlexMenu>
+        
+        <Button Grid.Column="1" Grid.Row="1" Content="Hello, World!" Command="{Binding Grades}"/>
     </Grid>
 </Window>

@@ -1,43 +1,21 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace FlexMenu.Controls
 {
-    public class FlexBreadcrumb : INotifyPropertyChanged
+    public class FlexBreadcrumb : Button
     {
-        private string _text;
+        #region Constructors
 
-        [Bindable(true), Category("Common")]
-        public string Text
+        static FlexBreadcrumb()
         {
-            get { return _text; }
-            set { _text = value; OnPropertyChanged("Text"); }
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexBreadcrumb)
+                , new FrameworkPropertyMetadata(typeof(FlexBreadcrumb)));
         }
 
-        private bool _active = false;
-
-        [Bindable(true), Category("Data")]
-        public bool Active
-        {
-            get { return _active; }
-            set { _active = value; OnPropertyChanged("Active"); }
-        }
-
-        private ICommand _command;
-
-        [Bindable(true), Category("Data")]
-        public ICommand Command
-        {
-            get { return _command; }
-            set { _command = value; OnPropertyChanged("Command"); }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        #endregion
     }
 }
