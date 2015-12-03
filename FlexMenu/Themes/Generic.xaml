@@ -264,6 +264,12 @@
                     <StackPanel Orientation="Horizontal">
                         <Border x:Name="Container" Style="{StaticResource FlexBreadcrumb}">
                             <Label Content="{Binding Text}" Style="{StaticResource FlexBreadcrumbLabel}"/>
+
+                            <Border.InputBindings>
+                                <MouseBinding
+                                MouseAction="LeftClick"
+                                Command="{Binding Command}"/>
+                            </Border.InputBindings>
                         </Border>
                     </StackPanel>
                     <DataTemplate.Triggers>

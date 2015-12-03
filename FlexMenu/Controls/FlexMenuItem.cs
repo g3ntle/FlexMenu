@@ -9,6 +9,8 @@ namespace FlexMenu.Controls
     public class FlexMenuItem : INotifyPropertyChanged
     {
         private string _text;
+
+        [Bindable(true), Category("Common")]
         public string Text
         {
             get { return _text; }
@@ -17,6 +19,7 @@ namespace FlexMenu.Controls
 
         private ImageSource _icon;
 
+        [Bindable(true), Category("Appearance")]
         public ImageSource Icon
         {
             get { return _icon; }
@@ -24,6 +27,8 @@ namespace FlexMenu.Controls
         }
 
         private bool _active = false;
+
+        [Bindable(true), Category("Data")]
         public bool Active
         {
             get { return _active; }
@@ -31,6 +36,8 @@ namespace FlexMenu.Controls
         }
 
         private ICommand _command;
+
+        [Bindable(true), Category("Data")]
         public ICommand Command
         {
             get { return _command; }
