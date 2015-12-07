@@ -11,9 +11,10 @@ namespace FlexMenu.Example.ViewModel
 
         public MainViewModel()
         {
-            MenuItemCommand = new RelayCommand(OnMenuItemCommand);
-            BreadcrumbCommand = new RelayCommand(OnBreadcrumbCommand);
-            LightboxCommand = new RelayCommand(OnLightboxCommand);
+            MenuItemCommand = new RelayCommand(OnMenuItem);
+            BreadcrumbCommand = new RelayCommand(OnBreadcrumb);
+            LightboxOpenCommand = new RelayCommand(OnLightboxOpen);
+            LightboxCloseCommand = new RelayCommand(OnLightboxClose);
         }
 
         #endregion
@@ -23,26 +24,32 @@ namespace FlexMenu.Example.ViewModel
 
         public ICommand MenuItemCommand { get; set; }
         public ICommand BreadcrumbCommand { get; set; }
-        public ICommand LightboxCommand { get; set; }
+        public ICommand LightboxOpenCommand { get; set; }
+        public ICommand LightboxCloseCommand { get; set; }
 
         #endregion
 
 
         #region Methods
 
-        protected virtual void OnMenuItemCommand()
+        protected virtual void OnMenuItem()
         {
             MessageBox.Show("You\'ve clicked a menu item!");
         }
 
-        protected virtual void OnBreadcrumbCommand()
+        protected virtual void OnBreadcrumb()
         {
             MessageBox.Show("You\'ve clicked a breadcrumb!");
         }
 
-        protected virtual void OnLightboxCommand()
+        protected virtual void OnLightboxOpen()
         {
+            FlexMenuManager.Instance.OpenLightbox();
+        }
 
+        protected virtual void OnLightboxClose()
+        {
+            FlexMenuManager.Instance.CloseLightbox();
         }
 
         #endregion

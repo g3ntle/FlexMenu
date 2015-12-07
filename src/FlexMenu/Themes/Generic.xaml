@@ -1,8 +1,15 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:FlexMenu.Controls">
+    xmlns:local="clr-namespace:FlexMenu.Controls"
+    xmlns:util="clr-namespace:FlexMenu.Utility">
 
+    <!--#region Misc.-->
+
+    <util:NullToVisibilityConverter x:Key="NullToVisibility"/>
+    
+    <!--#endregion-->
+    
     <!--#region Colors-->
     
     <Color x:Key="ColorGrey1">#FEFEFE</Color>
@@ -244,6 +251,7 @@
                                     <StackPanel Orientation="Vertical" Margin="20">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}}"
+                                                   Visibility="{Binding Icon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}, Converter={StaticResource NullToVisibility}}"
                                                    Style="{StaticResource FlexLightboxImageStyle}"/>
                                             <Label Content="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}}"
                                                    Style="{StaticResource FlexLightboxLabelStyle}"/>

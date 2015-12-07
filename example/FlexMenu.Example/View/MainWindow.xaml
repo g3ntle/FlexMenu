@@ -16,7 +16,9 @@
     <Grid>
         <!--#region LightBox -->
         
-        <fm:FlexLightbox Title="Lorem">
+        <fm:FlexLightbox Title="Lorem" 
+                         Icon="{StaticResource DownloadImage}"
+                         Command="{Binding LightboxCloseCommand}">
             <Grid>
                 <Label Content="Ipsum"/>
             </Grid>
@@ -63,7 +65,7 @@
                         Orientation="Vertical"
                         Margin="10">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Lightbox" Command="{Binding LightboxCommand}"/>
+                    <Button Content="Lightbox" Command="{Binding LightboxOpenCommand}"/>
                 </StackPanel>
             </StackPanel>
             

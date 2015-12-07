@@ -55,6 +55,7 @@
     <Compile Include="Controls\FlexLightbox.cs" />
     <Compile Include="Controls\FlexMenu.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
+    <Compile Include="FlexMenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,7 +71,8 @@
     </Compile>
     <Compile Include="Media\FlexBrushes.cs" />
     <Compile Include="Media\FlexColors.cs" />
-    <Compile Include="Utility\FlexWindowManager.cs" />
+    <Compile Include="Utility\NullToVisibilityConverter.cs" />
+    <Compile Include="Utility\WindowHelper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
