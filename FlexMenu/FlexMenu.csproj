@@ -54,6 +54,7 @@
     <Compile Include="Controls\FlexBreadcrumb.cs" />
     <Compile Include="Controls\FlexBreadcrumbs.cs" />
     <Compile Include="Controls\FlexHeader.cs" />
+    <Compile Include="Controls\FlexLightbox.cs" />
     <Compile Include="Controls\FlexMenu.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -80,6 +81,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\FontAwesome.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
@@ -87,6 +89,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

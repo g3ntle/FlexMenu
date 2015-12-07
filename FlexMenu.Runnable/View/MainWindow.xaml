@@ -16,32 +16,45 @@
             <BitmapImage x:Key="BooksImage" UriSource="pack://application:,,,/Resources/Books.png"/>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Background="#ECECEC">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30pt"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="135pt"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
+        <fm:FlexLightbox x:Name="lightbox" Title="Hello, World!" Icon="{StaticResource GradesImage}"
+                         Command="{Binding CloseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+            <Grid>
+                <Label Content="OI BLUD"/>
+            </Grid>
+        </fm:FlexLightbox>
+        
+        <Grid Background="#ECECEC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30pt"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="135pt"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <fm:FlexHeader Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                       Icon="{StaticResource StudentImage}"
-                       Title="John Doe" Subtitle="Grades"
-                       TitleWidth="135pt" SubtitleWidth="*">
-            <fm:FlexHeader.Content>
-                <fm:FlexBreadcrumbs>
-                    <fm:FlexBreadcrumb Content="Account"/>
-                    <fm:FlexBreadcrumb Content="Grades"/>
-                </fm:FlexBreadcrumbs>
-            </fm:FlexHeader.Content>
-        </fm:FlexHeader>
+            <fm:FlexHeader Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                           Icon="{StaticResource StudentImage}"
+                           Title="John Doe" Subtitle="Grades"
+                           TitleWidth="135pt" SubtitleWidth="*">
+                <fm:FlexHeader.Content>
+                    <fm:FlexBreadcrumbs>
+                        <fm:FlexBreadcrumb Content="Account"/>
+                        <fm:FlexBreadcrumb Content="Grades"/>
+                    </fm:FlexBreadcrumbs>
+                </fm:FlexHeader.Content>
+            </fm:FlexHeader>
 
-        <fm:FlexMenu Grid.Column="0" Grid.Row="1">
-            <fm:FlexMenuItem Content="Grades" Icon="{StaticResource GradesImage}" Command="{Binding Grades}"/>
-            <fm:FlexMenuItem Content="Sports" Icon="{StaticResource SportsImage}" Command="{Binding Sports}"/>
-            <fm:FlexMenuItem Content="Books" Icon="{StaticResource BooksImage}" Command="{Binding Books}"/>
-        </fm:FlexMenu>
+            <fm:FlexMenu Grid.Column="0" Grid.Row="1">
+                <fm:FlexMenuItem Content="Grades" Icon="{StaticResource GradesImage}" Command="{Binding Grades}"/>
+                <fm:FlexMenuItem Content="Sports" Icon="{StaticResource SportsImage}" Command="{Binding Sports}"/>
+                <fm:FlexMenuItem Content="Books" Icon="{StaticResource BooksImage}" Command="{Binding Books}"/>
+            </fm:FlexMenu>
+
+            <Button Content="Hello, World!"
+                    Grid.Column="1" Grid.Row="1"
+                    Command="{Binding OpenCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+        </Grid>
     </Grid>
 </Window>

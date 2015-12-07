@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FlexMenu.Controls;
+using GalaSoft.MvvmLight.Command;
 
 namespace FlexMenu.Runnable.View
 {
@@ -20,7 +21,22 @@ namespace FlexMenu.Runnable.View
     {
         public MainWindow()
         {
+            OpenCommand = new RelayCommand(OnOpen);
+            CloseCommand = new RelayCommand(OnClose);
             InitializeComponent();
+        }
+
+        public ICommand OpenCommand { get; set; }
+        public ICommand CloseCommand { get; set; }
+
+        protected void OnOpen()
+        {
+            lightbox.Toggle();
+        }
+
+        protected void OnClose()
+        {
+            lightbox.Toggle();
         }
     }
 }
