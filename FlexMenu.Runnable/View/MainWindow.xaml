@@ -17,10 +17,31 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <fm:FlexLightbox x:Name="lightbox" Title="Hello, World!" Icon="{StaticResource GradesImage}"
+        <fm:FlexLightbox x:Name="lightbox" Title="Book" Icon="{StaticResource BooksImage}"
                          Command="{Binding CloseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
             <Grid>
-                <Label Content="OI BLUD"/>
+                <StackPanel Orientation="Vertical">
+                    <Grid Width="200pt" Margin="0 5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Content="Title"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Author"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5"/>
+
+                        <Button Grid.Row="2" Grid.Column="1" Margin="0 5" Content="Save"/>
+                    </Grid>
+                </StackPanel>
             </Grid>
         </fm:FlexLightbox>
         
@@ -52,9 +73,13 @@
                 <fm:FlexMenuItem Content="Books" Icon="{StaticResource BooksImage}" Command="{Binding Books}"/>
             </fm:FlexMenu>
 
-            <Button Content="Hello, World!"
-                    Grid.Column="1" Grid.Row="1"
-                    Command="{Binding OpenCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Button Content="Lightbox"
+                            Grid.Column="1" Grid.Row="1"
+                            Command="{Binding OpenCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

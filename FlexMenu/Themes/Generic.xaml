@@ -262,7 +262,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="Inner" Storyboard.TargetProperty="Margin">
-                                            <EasingThicknessKeyFrame KeyTime="0:0:0" Value="0 50 0 0">
+                                            <EasingThicknessKeyFrame KeyTime="0:0:0" Value="0 -50 0 0">
                                                 <EasingThicknessKeyFrame.EasingFunction>
                                                     <CubicEase/>
                                                 </EasingThicknessKeyFrame.EasingFunction>
