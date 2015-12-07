@@ -3,15 +3,21 @@
   <metadata>
     <id>FlexMenu</id>
     <version>2.0.0</version>
-    <title>$title$</title>
     <authors>robhendriks</authors>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <licenseUrl>https://github.com/robhendriks/FlexMenu/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/robhendriks/FlexMenu</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/robhendriks/FlexMenu/master/doc/flex-64x64.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2015</copyright>
-    <tags>Tag1 Tag2</tags>
+    <description>Flexible WPF controls.</description>
+    <releaseNotes>Second major release.</releaseNotes>
+    <tags>controls</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="WindowsBase"/>
+      <frameworkAssembly assemblyName="PresentationCore"/>
+      <frameworkAssembly assemblyName="PresentationFramework"/>
+    </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="..\src\FlexMenu\bin\Release\FlexMenu.dll" target="lib\FlexMenu.dll"/>
+  </files>
 </package>
