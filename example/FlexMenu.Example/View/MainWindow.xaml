@@ -1,0 +1,73 @@
+﻿<Window x:Class="FlexMenu.Example.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlexMenu.Example.View"
+        xmlns:fm="clr-namespace:FlexMenu.Controls;assembly=FlexMenu"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        Title="Lorem Ipsum" Height="480" Width="640">
+    <Window.Resources>
+        <BitmapImage x:Key="AppImage" UriSource="pack://application:,,,/Resources/App.png"/>
+        <BitmapImage x:Key="DownloadImage" UriSource="pack://application:,,,/Resources/Download.png"/>
+        <BitmapImage x:Key="UploadImage" UriSource="pack://application:,,,/Resources/Upload.png"/>
+    </Window.Resources>
+    <Grid>
+        <!--#region LightBox -->
+        
+        <fm:FlexLightbox Title="Lorem">
+            <Grid>
+                <Label Content="Ipsum"/>
+            </Grid>
+        </fm:FlexLightbox>
+        
+        <!--#endregion-->
+
+        <Grid Background="#ECECEC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35pt"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140pt"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--#region Header-->
+            
+            <fm:FlexHeader Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                           Title="Lorem" TitleWidth="140pt"
+                           Subtitle="Ipsum" SubtitleWidth="*"
+                           Icon="{StaticResource AppImage}">
+                <fm:FlexBreadcrumbs>
+                    <fm:FlexBreadcrumb Content="Lorem" Command="{Binding BreadcrumbCommand}"/>
+                    <fm:FlexBreadcrumb Content="Ipsum" Command="{Binding BreadcrumbCommand}"/>
+                </fm:FlexBreadcrumbs>
+            </fm:FlexHeader>
+            
+            <!--#endregion-->
+            
+            <!--#region FlexMenu-->
+
+            <fm:FlexMenu Grid.Row="1" Grid.Column="0">
+                <fm:FlexMenuItem Content="Lorem" Icon="{StaticResource DownloadImage}" Command="{Binding MenuItemCommand}"/>
+                <fm:FlexMenuItem Content="Ipsum" Icon="{StaticResource UploadImage}" Command="{Binding MenuItemCommand}"/>
+            </fm:FlexMenu>
+            
+            <!--#endregion-->
+            
+            <!--#region Content-->
+
+            <StackPanel Grid.Row="1" Grid.Column="1"
+                        Orientation="Vertical"
+                        Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Lightbox" Command="{Binding LightboxCommand}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</Window>

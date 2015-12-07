@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Media;
 
-namespace FlexMenu.Utility
+namespace FlexMenu.Media
 {
     public static class FlexColors
     {
