@@ -31,12 +31,12 @@ namespace FlexMenu.Runnable.View
 
         protected void OnOpen()
         {
-            lightbox.Toggle();
+            lightbox.Open();
         }
 
         protected void OnClose()
         {
-            lightbox.Toggle();
+            lightbox.Close();
         }
     }
 }
