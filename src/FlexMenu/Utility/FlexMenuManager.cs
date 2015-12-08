@@ -3,7 +3,7 @@ using FlexMenu.Utility;
 using System;
 using System.Linq;
 
-namespace FlexMenu
+namespace FlexMenu.Utility
 {
     public sealed class FlexMenuManager
     {

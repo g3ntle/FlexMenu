@@ -55,7 +55,7 @@
     <Compile Include="Controls\FlexLightbox.cs" />
     <Compile Include="Controls\FlexMenu.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
-    <Compile Include="FlexMenuManager.cs" />
+    <Compile Include="Utility\FlexMenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

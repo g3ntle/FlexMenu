@@ -2,11 +2,11 @@
 <package >
   <metadata>
     <id>FlexMenu</id>
-    <version>2.0.1</version>
-    <authors>robhendriks</authors>
-    <licenseUrl>https://github.com/robhendriks/FlexMenu/blob/master/LICENSE.txt</licenseUrl>
-    <projectUrl>https://github.com/robhendriks/FlexMenu</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/robhendriks/FlexMenu/master/doc/flex-64x64.png</iconUrl>
+    <version>2.1.0</version>
+    <authors>g3ntle</authors>
+    <licenseUrl>https://github.com/g3ntle/FlexMenu/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/g3ntle/FlexMenu</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/g3ntle/FlexMenu/master/docs/icon-64x64.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Flexible WPF controls.</description>
     <releaseNotes>Second major release.</releaseNotes>
