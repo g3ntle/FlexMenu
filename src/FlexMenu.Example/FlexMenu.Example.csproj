@@ -35,10 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FlexMenu, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlexMenu.2.0.1\lib\FlexMenu.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.2.0.37222, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
@@ -127,6 +123,12 @@
     <Resource Include="Resources\App.png" />
     <Resource Include="Resources\Download.png" />
     <Resource Include="Resources\Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlexMenu\FlexMenu.csproj">
+      <Project>{75f96079-7ca3-4683-bbf3-f0a2f34e6572}</Project>
+      <Name>FlexMenu</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
