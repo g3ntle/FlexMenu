@@ -53,8 +53,14 @@
             <!--#region FlexMenu-->
 
             <fm:FlexMenu Grid.Row="1" Grid.Column="0">
-                <fm:FlexMenuItem Content="Lorem" Icon="{StaticResource DownloadImage}" Command="{Binding MenuItemCommand}"/>
-                <fm:FlexMenuItem Content="Ipsum" Icon="{StaticResource UploadImage}" Command="{Binding MenuItemCommand}"/>
+                <fm:FlexMenuGroup Title="Lorem Ipsum">
+                    <fm:FlexMenuItem Content="Lorem" Icon="{StaticResource DownloadImage}" Command="{Binding MenuItemCommand}"/>
+                    <fm:FlexMenuItem Content="Ipsum" Icon="{StaticResource UploadImage}" Command="{Binding MenuItemCommand}"/>
+                </fm:FlexMenuGroup>
+                <fm:FlexMenuGroup Title="Lorem Ipsum">
+                    <fm:FlexMenuItem Content="Lorem" Icon="{StaticResource DownloadImage}" Command="{Binding MenuItemCommand}"/>
+                    <fm:FlexMenuItem Content="Ipsum" Icon="{StaticResource UploadImage}" Command="{Binding MenuItemCommand}"/>
+                </fm:FlexMenuGroup>
             </fm:FlexMenu>
             
             <!--#endregion-->

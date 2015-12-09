@@ -54,6 +54,7 @@
     <Compile Include="Controls\FlexHeader.cs" />
     <Compile Include="Controls\FlexLightbox.cs" />
     <Compile Include="Controls\FlexMenu.cs" />
+    <Compile Include="Controls\FlexMenuGroup.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
     <Compile Include="Utility\FlexMenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

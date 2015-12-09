@@ -16,6 +16,7 @@
     <Color x:Key="ColorGrey2">#F4F4F4</Color>
     <Color x:Key="ColorGrey3">#ECECEC</Color>
     <Color x:Key="ColorGrey4">#666666</Color>
+    <Color x:Key="ColorGrey5">#CCCCCC</Color>
     <Color x:Key="ColorRed1">#E74C3C</Color>
     <Color x:Key="ColorRed2">#C0392B</Color>
     <Color x:Key="ColorGreen1">#27AE60</Color>
@@ -29,6 +30,7 @@
     <SolidColorBrush x:Key="BrushGrey2" Color="{StaticResource ColorGrey2}"/>
     <SolidColorBrush x:Key="BrushGrey3" Color="{StaticResource ColorGrey3}"/>
     <SolidColorBrush x:Key="BrushGrey4" Color="{StaticResource ColorGrey4}"/>
+    <SolidColorBrush x:Key="BrushGrey5" Color="{StaticResource ColorGrey5}"/>
     <SolidColorBrush x:Key="BrushRed1" Color="{StaticResource ColorRed1}"/>
     <SolidColorBrush x:Key="BrushRed2" Color="{StaticResource ColorRed2}"/>
     <SolidColorBrush x:Key="BrushGreen1" Color="{StaticResource ColorGreen1}"/>
@@ -52,6 +54,24 @@
     
     <!--#endregion-->
 
+    <!--#region FlexMenuGroupStyle -->
+
+    <Style x:Key="FlexMenuGroupStyle" TargetType="{x:Type StackPanel}">
+        
+    </Style>
+    
+    <!--#endregion-->
+    
+    <!--#region FlexMenuGroupLabelStyle-->
+
+    <Style x:Key="FlexMenuGroupLabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
+        <Setter Property="FontSize" Value="10pt"/>
+        <Setter Property="Foreground" Value="{StaticResource BrushGrey5}"/>
+        <Setter Property="Margin" Value="3"/>
+    </Style>
+    
+    <!--#endregion-->
+    
     <!--#region FlexMenuItemStyle-->
 
     <Style x:Key="FlexMenuItemStyle" TargetType="{x:Type Grid}">
@@ -362,6 +382,32 @@
     
     <!--#endregion-->
 
+    <!--#region FlexMenuGroup-->
+
+    <Style TargetType="{x:Type local:FlexMenuGroup}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FlexMenuGroup}">
+                    <StackPanel Orientation="Vertical" Style="{StaticResource FlexMenuGroupStyle}">
+                        <Label x:Name="lblTitle"
+                               Content="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ItemsControl}}}"
+                               Style="{StaticResource FlexMenuGroupLabelStyle}"/>
+                        <ItemsPresenter/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--#endregion-->
+    
     <!--#region FlexMenuItem-->
     
     <Style TargetType="{x:Type local:FlexMenuItem}">
