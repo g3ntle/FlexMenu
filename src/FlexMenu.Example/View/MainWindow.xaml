@@ -61,6 +61,9 @@
                     <fm:FlexMenuItem Content="Lorem" Icon="{StaticResource DownloadImage}" Command="{Binding MenuItemCommand}"/>
                     <fm:FlexMenuItem Content="Ipsum" Icon="{StaticResource UploadImage}" Command="{Binding MenuItemCommand}"/>
                 </fm:FlexMenuGroup>
+                <fm:FlexMenu.Append>
+                    <fm:FlexUserBar Content="Bill Gates"/>
+                </fm:FlexMenu.Append>
             </fm:FlexMenu>
             
             <!--#endregion-->

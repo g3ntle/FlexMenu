@@ -366,7 +366,16 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FlexMenu}">
                     <Grid Style="{StaticResource FlexMenuStyle}">
-                        <ItemsPresenter/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ContentPresenter Grid.Row="0" Content="{TemplateBinding Prepend}"/>
+                            <ItemsPresenter Grid.Row="1"/>
+                            <ContentPresenter Grid.Row="2" Content="{TemplateBinding Append}"/>
+                        </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -545,6 +554,57 @@
         </Setter>
     </Style>
     
+    <!--#endregion-->
+    
+    <!--#region FlexUserBar-->
+
+    <Style x:Key="FlexUserBarLabel" TargetType="{x:Type Label}" BasedOn="{StaticResource FlexLabel}">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="FontSize" Value="14px"/>
+    </Style>
+    
+    <Style TargetType="{x:Type local:FlexUserBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FlexUserBar}">
+                    <Grid x:Name="Container" Background="White">
+                        <StackPanel Margin="10" Orientation="Horizontal">
+                            <Image Source="{TemplateBinding Icon}" Width="20" Height="20" Margin="0,0,5,0">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="10,10" RadiusX="10" RadiusY="10"/>
+                                </Image.Clip>
+                            </Image>
+                            <Grid>
+                                <Label Content="{TemplateBinding Content}" VerticalAlignment="Center" Style="{StaticResource FlexUserBarLabel}"/>
+                            </Grid>
+                        </StackPanel>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:.3"/>
+                                    <VisualTransition GeneratedDuration="0:0:.1" From="Hover" To="Pressed"/>
+                                </VisualStateGroup.Transitions>
+                                <VisualState Name="Normal"/>
+                                <VisualState Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation To="{StaticResource ColorGrey2}" Storyboard.TargetName="Container" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation To="{StaticResource ColorGrey3}" Storyboard.TargetName="Container" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--#endregion-->
     
 </ResourceDictionary>

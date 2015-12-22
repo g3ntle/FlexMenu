@@ -56,6 +56,7 @@
     <Compile Include="Controls\FlexMenu.cs" />
     <Compile Include="Controls\FlexMenuGroup.cs" />
     <Compile Include="Controls\FlexMenuItem.cs" />
+    <Compile Include="Controls\FlexUserBar.cs" />
     <Compile Include="Utility\FlexMenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -91,7 +92,9 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Bill.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
